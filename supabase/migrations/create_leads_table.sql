@@ -4,7 +4,6 @@
   1. New Tables
     - `leads`
       - `id` (uuid, primary key)
-      - `created_at` (timestamp)
       - `industry` (text)
       - `other_industry` (text)
       - `products` (text array)
@@ -17,14 +16,15 @@
       - `email` (text)
       - `phone` (text)
       - `additional_info` (text)
+      - `created_at` (timestamp with time zone)
   2. Security
     - Enable RLS on `leads` table
     - Add policy for authenticated users to insert data
+    - Add policy for authenticated users to read their own data
 */
 
 CREATE TABLE IF NOT EXISTS leads (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  created_at timestamptz DEFAULT now(),
   industry text NOT NULL,
   other_industry text,
   products text[] NOT NULL,
@@ -36,7 +36,8 @@ CREATE TABLE IF NOT EXISTS leads (
   company_name text NOT NULL,
   email text NOT NULL,
   phone text NOT NULL,
-  additional_info text
+  additional_info text,
+  created_at timestamptz DEFAULT now()
 );
 
 ALTER TABLE leads ENABLE ROW LEVEL SECURITY;
@@ -44,10 +45,10 @@ ALTER TABLE leads ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Anyone can insert leads"
   ON leads
   FOR INSERT
-  TO anon
+  TO anon, authenticated
   WITH CHECK (true);
 
-CREATE POLICY "Authenticated users can view leads"
+CREATE POLICY "Authenticated users can read leads"
   ON leads
   FOR SELECT
   TO authenticated

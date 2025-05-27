@@ -4,34 +4,34 @@ import { FaShieldAlt, FaTruck, FaIndustry, FaChartLine, FaLeaf, FaHandshake } fr
 const Benefits = () => {
   const benefits = [
     {
-      icon: <FaShieldAlt className="text-3xl text-primary-600" />,
-      title: "Premium Quality",
-      description: "All our lubricants meet or exceed industry specifications and OEM requirements for optimal performance."
+      icon: <FaChartLine className="text-3xl text-primary-600" />,
+      title: "Wholesale Pricing",
+      description: "Save 15-20% compared to competitors with our transparent bulk pricing and volume discounts for all order sizes."
     },
     {
       icon: <FaTruck className="text-3xl text-primary-600" />,
-      title: "24-Hour Delivery",
-      description: "Emergency delivery available 24/7 throughout the Houston metro area to minimize your downtime."
+      title: "Free 24-Hour Delivery",
+      description: "Zero delivery fees within Houston metro area with emergency delivery available 24/7 at no extra charge."
     },
     {
-      icon: <FaIndustry className="text-3xl text-primary-600" />,
-      title: "Industry Expertise",
-      description: "Our team of lubrication specialists has decades of experience across multiple industries."
-    },
-    {
-      icon: <FaChartLine className="text-3xl text-primary-600" />,
-      title: "Cost Efficiency",
-      description: "Bulk purchasing options and competitive pricing help reduce your operational costs."
-    },
-    {
-      icon: <FaLeaf className="text-3xl text-primary-600" />,
-      title: "Environmentally Conscious",
-      description: "Eco-friendly options and responsible disposal services to support your sustainability goals."
+      icon: <FaShieldAlt className="text-3xl text-primary-600" />,
+      title: "Premium Quality Guarantee",
+      description: "Same high-quality lubricants as premium brands at 15-20% lower prices, backed by our satisfaction guarantee."
     },
     {
       icon: <FaHandshake className="text-3xl text-primary-600" />,
-      title: "Personalized Service",
-      description: "Customized solutions and dedicated account managers for your specific business needs."
+      title: "Price Match Promise",
+      description: "Found a better price? We'll match any legitimate competitor's quote and give you an additional 5% discount."
+    },
+    {
+      icon: <FaIndustry className="text-3xl text-primary-600" />,
+      title: "Bulk Order Discounts",
+      description: "Progressive discount structure starting at just 55 gallons, with additional savings at 110, 220, and 330+ gallons."
+    },
+    {
+      icon: <FaLeaf className="text-3xl text-primary-600" />,
+      title: "No Minimum Orders",
+      description: "Enjoy wholesale pricing without large minimum order requirements, perfect for businesses of all sizes."
     }
   ];
 
@@ -46,7 +46,7 @@ const Benefits = () => {
             viewport={{ once: true }}
             className="inline-block px-4 py-1 rounded-full bg-primary-100 text-primary-800 text-sm font-medium mb-4"
           >
-            Why Choose Us
+            SAVE 15-20% GUARANTEED
           </motion.span>
           
           <motion.h2 
@@ -56,7 +56,7 @@ const Benefits = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-primary-800 mb-4 font-heading"
           >
-            The Houston Oil Supply <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">Advantage</span>
+            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">Most Affordable</span> Premium Lubricants in Houston
           </motion.h2>
           
           <motion.p 
@@ -66,7 +66,7 @@ const Benefits = () => {
             viewport={{ once: true }}
             className="text-lg text-neutral-600 max-w-2xl mx-auto"
           >
-            We deliver more than just lubricants. Our comprehensive approach ensures your equipment runs smoothly, efficiently, and reliably.
+            We deliver premium quality at wholesale prices. Our transparent pricing model eliminates middlemen markups, passing the savings directly to you.
           </motion.p>
         </div>
         
@@ -89,7 +89,7 @@ const Benefits = () => {
               <p className="text-neutral-600">{benefit.description}</p>
               
               <a href="#survey" className="inline-flex items-center mt-4 text-primary-600 font-medium hover:text-primary-800 transition-colors">
-                Learn More
+                Get Your Price Quote
                 <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                 </svg>
@@ -106,7 +106,7 @@ const Benefits = () => {
           className="mt-16 text-center"
         >
           <a href="#survey" className="btn-primary inline-flex items-center">
-            Get a Custom Quote
+            Calculate Your Savings
             <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>

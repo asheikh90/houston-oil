@@ -7,43 +7,43 @@ const Products: React.FC = () => {
     {
       icon: <FaOilCan className="text-4xl text-primary-600 mb-4" />,
       title: "Engine Oils",
-      description: "High-performance synthetic, semi-synthetic, and conventional engine oils for all types of vehicles and equipment.",
-      features: ["Extended drain intervals", "Superior wear protection", "Improved fuel economy", "All-weather performance"],
+      description: "Premium synthetic and conventional engine oils at prices 15-20% below retail.",
+      features: ["From $4.25/gallon", "Bulk discounts available", "Same quality as major brands", "Free delivery in Houston"],
       image: "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       icon: <FaIndustry className="text-4xl text-primary-600 mb-4" />,
       title: "Hydraulic Fluids",
-      description: "Premium hydraulic fluids designed for industrial machinery, construction equipment, and manufacturing systems.",
-      features: ["Excellent thermal stability", "Anti-wear protection", "Extended equipment life", "Wide temperature range"],
+      description: "Industrial-grade hydraulic fluids at wholesale prices with volume discounts.",
+      features: ["From $3.85/gallon", "Bulk pricing available", "OEM specification compliant", "Free technical support"],
       image: "https://images.pexels.com/photos/162568/oil-industry-power-technology-162568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       icon: <FaTruck className="text-4xl text-primary-600 mb-4" />,
       title: "Transmission Fluids",
-      description: "Specialized transmission fluids for automatic, manual, and heavy-duty transmissions across various applications.",
-      features: ["Smooth shifting", "Oxidation resistance", "Seal compatibility", "Noise reduction"],
+      description: "High-performance transmission fluids at prices that beat any competitor.",
+      features: ["From $4.50/gallon", "Volume pricing tiers", "All specifications available", "Price match guarantee"],
       image: "https://images.pexels.com/photos/3822843/pexels-photo-3822843.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       icon: <FaWrench className="text-4xl text-primary-600 mb-4" />,
       title: "Industrial Greases",
-      description: "High-performance greases for bearings, chassis, and industrial applications requiring superior lubrication.",
-      features: ["Water resistance", "High temperature stability", "Extended lubrication", "Reduced downtime"],
+      description: "Premium greases for all applications at wholesale pricing with no minimum order.",
+      features: ["From $5.25/lb", "Bulk container options", "Custom packaging available", "Quantity discounts"],
       image: "https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       icon: <FaShip className="text-4xl text-primary-600 mb-4" />,
       title: "Marine Lubricants",
-      description: "Specialized lubricants for marine engines, deck equipment, and offshore applications in harsh environments.",
-      features: ["Corrosion protection", "Salt water resistance", "Engine cleanliness", "Emissions compliance"],
+      description: "Specialized marine lubricants at prices 15% below marine supply stores.",
+      features: ["From $5.75/gallon", "Bulk delivery options", "Meets all marine specs", "Volume discounts"],
       image: "https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       icon: <FaLeaf className="text-4xl text-primary-600 mb-4" />,
       title: "Eco-Friendly Options",
-      description: "Biodegradable and environmentally conscious lubricant options for operations with sustainability goals.",
-      features: ["Reduced environmental impact", "Biodegradable formulations", "Renewable resources", "Regulatory compliance"],
+      description: "Biodegradable lubricants at competitive prices with sustainability discounts.",
+      features: ["From $6.25/gallon", "Bulk pricing available", "Environmentally certified", "Recycling program discounts"],
       image: "https://images.pexels.com/photos/929385/pexels-photo-929385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
   ];
@@ -59,7 +59,7 @@ const Products: React.FC = () => {
             viewport={{ once: true }}
             className="inline-block px-4 py-1 rounded-full bg-primary-100 text-primary-800 text-sm font-medium mb-4"
           >
-            Our Products
+            WHOLESALE PRICING
           </motion.span>
           
           <motion.h2 
@@ -69,7 +69,7 @@ const Products: React.FC = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 font-heading"
           >
-            Premium Lubricants for Every <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">Application</span>
+            Premium Products at <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">Unbeatable Prices</span>
           </motion.h2>
           
           <motion.p 
@@ -79,7 +79,7 @@ const Products: React.FC = () => {
             viewport={{ once: true }}
             className="text-lg text-neutral-600 max-w-2xl mx-auto"
           >
-            We offer a comprehensive range of high-quality lubricants designed to meet the specific needs of various industries and applications.
+            Compare our transparent pricing with competitors and save 15-20% on the exact same premium lubricants. Volume discounts available with no minimum order requirements.
           </motion.p>
         </div>
         
@@ -122,7 +122,7 @@ const Products: React.FC = () => {
                 </ul>
                 
                 <a href="#survey" className="inline-flex items-center text-primary-600 font-medium hover:text-primary-800 transition-colors">
-                  Request Quote
+                  Get Your Price Quote
                   <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
@@ -140,10 +140,10 @@ const Products: React.FC = () => {
           className="mt-16 text-center"
         >
           <p className="text-neutral-600 mb-6 max-w-3xl mx-auto">
-            Can't find what you're looking for? We offer custom blending services and can source specialty lubricants for unique applications.
+            <strong className="text-primary-700">Price Match Guarantee:</strong> Found a better price? We'll match any legitimate competitor's quote and give you an additional 5% discount.
           </p>
           <a href="#survey" className="btn-primary inline-flex items-center">
-            Contact Us for Custom Solutions
+            Request Your Custom Price Quote
             <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>

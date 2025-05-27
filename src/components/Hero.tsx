@@ -18,10 +18,10 @@ const Hero: React.FC = () => {
             className="max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading mb-6 leading-tight">
-              Premium Bulk Oil & Lubricants for <span className="text-accent-300">Industrial Excellence</span>
+              <span className="text-accent-300">Save 15-20%</span> on Premium Bulk Oil & Lubricants
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-primary-100 leading-relaxed">
-              Delivering high-quality lubricants and exceptional service to keep your operations running smoothly across Houston and beyond.
+              Houston's most competitive pricing on high-quality industrial lubricants. Get wholesale rates with no minimum order requirements.
             </p>
             <div className="flex flex-wrap gap-4">
               <motion.a 
@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Request Quote
+                Get Your Price Quote
               </motion.a>
               <motion.a 
                 href="#products" 
@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Explore Products
+                Compare Prices
               </motion.a>
             </div>
           </motion.div>
@@ -68,20 +68,20 @@ const Hero: React.FC = () => {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
         >
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+            <div className="text-3xl font-bold text-white mb-1">15-20%</div>
+            <div className="text-primary-100">Lower Than Competitors</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+            <div className="text-3xl font-bold text-white mb-1">$0</div>
+            <div className="text-primary-100">Delivery Fee (Houston)</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
             <div className="text-3xl font-bold text-white mb-1">24/7</div>
-            <div className="text-primary-100">Emergency Delivery</div>
+            <div className="text-primary-100">Price Match Guarantee</div>
           </div>
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div className="text-3xl font-bold text-white mb-1">100+</div>
-            <div className="text-primary-100">Product Varieties</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div className="text-3xl font-bold text-white mb-1">500+</div>
-            <div className="text-primary-100">Satisfied Clients</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div className="text-3xl font-bold text-white mb-1">25+</div>
-            <div className="text-primary-100">Years Experience</div>
+            <div className="text-3xl font-bold text-white mb-1">30-Day</div>
+            <div className="text-primary-100">Money-Back Guarantee</div>
           </div>
         </motion.div>
       </div>

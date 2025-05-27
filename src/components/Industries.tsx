@@ -7,58 +7,58 @@ const Industries: React.FC = () => {
     {
       icon: <FaTruck className="text-4xl text-primary-600" />,
       title: "Transportation & Logistics",
-      description: "Keep your fleet running efficiently with our premium lubricants designed for trucks, buses, and delivery vehicles.",
+      description: "Save 15-20% on premium lubricants for your entire fleet with our wholesale pricing.",
       applications: ["Fleet maintenance", "Long-haul trucking", "Last-mile delivery", "Public transportation"],
-      benefits: ["Reduced downtime", "Extended drain intervals", "Fuel economy", "All-season protection"]
+      savings: ["Up to $1,200/year per truck", "Volume discounts available", "Free delivery in Houston", "Bulk pricing for fleets"]
     },
     {
       icon: <FaIndustry className="text-4xl text-primary-600" />,
       title: "Manufacturing",
-      description: "Optimize your production equipment with industrial lubricants that enhance performance and extend machinery life.",
+      description: "Reduce maintenance costs by 15-20% with our wholesale industrial lubricants.",
       applications: ["Production lines", "CNC machines", "Hydraulic systems", "Conveyor systems"],
-      benefits: ["Increased productivity", "Reduced maintenance costs", "Extended equipment life", "Temperature stability"]
+      savings: ["Bulk pricing from 55 gallons", "No minimum order fees", "Free technical consultation", "Scheduled delivery discounts"]
     },
     {
       icon: <FaHardHat className="text-4xl text-primary-600" />,
       title: "Construction",
-      description: "Protect your heavy equipment with lubricants designed to withstand extreme conditions and heavy loads.",
+      description: "Cut equipment maintenance costs with wholesale pricing on all lubricants.",
       applications: ["Excavators", "Bulldozers", "Cranes", "Concrete mixers"],
-      benefits: ["Dirt/dust protection", "Water resistance", "Heavy load capacity", "Extended service intervals"]
+      savings: ["Save $3-5 per gallon", "Project-based pricing", "On-site delivery at no charge", "Emergency delivery available"]
     },
     {
       icon: <FaTractor className="text-4xl text-primary-600" />,
       title: "Agriculture",
-      description: "Keep your agricultural equipment running smoothly through planting, growing, and harvest seasons.",
+      description: "Wholesale farm equipment lubricants at prices 15-20% below retail.",
       applications: ["Tractors", "Harvesters", "Irrigation systems", "Processing equipment"],
-      benefits: ["All-weather performance", "Extended drain intervals", "Equipment protection", "Reduced downtime"]
+      savings: ["Seasonal discount programs", "Harvest-time priority pricing", "Bulk storage solutions", "Co-op volume discounts"]
     },
     {
       icon: <FaShip className="text-4xl text-primary-600" />,
       title: "Marine",
-      description: "Specialized lubricants for vessels operating in harsh marine environments, from small boats to commercial ships.",
+      description: "Marine-grade lubricants at wholesale prices with dockside delivery.",
       applications: ["Marine engines", "Deck equipment", "Offshore platforms", "Port machinery"],
-      benefits: ["Corrosion protection", "Water resistance", "Salt water compatibility", "Extended service life"]
+      savings: ["15% below marine supply stores", "Dockside delivery included", "Bulk container options", "Fleet account discounts"]
     },
     {
       icon: <FaOilCan className="text-4xl text-primary-600" />,
       title: "Energy & Utilities",
-      description: "Support critical infrastructure with lubricants designed for power generation and utility equipment.",
+      description: "Premium lubricants for critical infrastructure at wholesale pricing.",
       applications: ["Power plants", "Substations", "Generators", "Transmission equipment"],
-      benefits: ["Reliability in critical systems", "Extended service life", "Temperature stability", "Reduced maintenance"]
+      savings: ["Long-term contract discounts", "Emergency delivery at no extra cost", "Scheduled maintenance programs", "Volume-based pricing tiers"]
     },
     {
       icon: <FaWind className="text-4xl text-primary-600" />,
       title: "Renewable Energy",
-      description: "Specialized lubricants for wind turbines, solar tracking systems, and other renewable energy equipment.",
+      description: "Eco-friendly lubricants at competitive prices with sustainability discounts.",
       applications: ["Wind turbines", "Solar tracking systems", "Hydroelectric equipment", "Biomass facilities"],
-      benefits: ["Extended service intervals", "All-weather performance", "Reduced maintenance costs", "Environmental compatibility"]
+      savings: ["Green business discounts", "Recycling program rebates", "Bulk eco-friendly options", "Sustainability partnership pricing"]
     },
     {
       icon: <FaWarehouse className="text-4xl text-primary-600" />,
       title: "Warehousing & Distribution",
-      description: "Keep your material handling equipment and distribution systems running smoothly and efficiently.",
+      description: "Reduce equipment maintenance costs with our wholesale lubricant pricing.",
       applications: ["Forklifts", "Pallet jacks", "Conveyor systems", "Loading dock equipment"],
-      benefits: ["Reduced downtime", "Extended equipment life", "All-season performance", "Improved efficiency"]
+      savings: ["Multi-facility discount programs", "Scheduled delivery savings", "Equipment-specific packages", "Preventative maintenance plans"]
     }
   ];
 
@@ -73,7 +73,7 @@ const Industries: React.FC = () => {
             viewport={{ once: true }}
             className="inline-block px-4 py-1 rounded-full bg-primary-100 text-primary-800 text-sm font-medium mb-4"
           >
-            Industries We Serve
+            INDUSTRY-SPECIFIC SAVINGS
           </motion.span>
           
           <motion.h2 
@@ -83,7 +83,7 @@ const Industries: React.FC = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 font-heading"
           >
-            Specialized Solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">Every Industry</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">Save 15-20%</span> in Every Industry
           </motion.h2>
           
           <motion.p 
@@ -93,7 +93,7 @@ const Industries: React.FC = () => {
             viewport={{ once: true }}
             className="text-lg text-neutral-600 max-w-2xl mx-auto"
           >
-            We understand the unique challenges and requirements of different industries. Our specialized lubricants are tailored to meet the specific needs of your operations.
+            Our industry-specific pricing packages are designed to maximize your savings while meeting the exact requirements of your operations. Calculate your potential savings today.
           </motion.p>
         </div>
         
@@ -116,7 +116,7 @@ const Industries: React.FC = () => {
               <p className="text-neutral-600 mb-4">{industry.description}</p>
               
               <div className="mb-4">
-                <h4 className="text-sm font-semibold text-neutral-700 mb-2">Common Applications:</h4>
+                <h4 className="text-sm font-semibold text-neutral-700 mb-2">Applications:</h4>
                 <ul className="space-y-1">
                   {industry.applications.map((app, appIndex) => (
                     <li key={appIndex} className="flex items-start">
@@ -130,21 +130,21 @@ const Industries: React.FC = () => {
               </div>
               
               <div>
-                <h4 className="text-sm font-semibold text-neutral-700 mb-2">Key Benefits:</h4>
+                <h4 className="text-sm font-semibold text-neutral-700 mb-2">Potential Savings:</h4>
                 <ul className="space-y-1">
-                  {industry.benefits.map((benefit, benefitIndex) => (
-                    <li key={benefitIndex} className="flex items-start">
+                  {industry.savings.map((saving, savingIndex) => (
+                    <li key={savingIndex} className="flex items-start">
                       <svg className="h-4 w-4 text-accent-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-sm text-neutral-600">{benefit}</span>
+                      <span className="text-sm text-neutral-600">{saving}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               
               <a href="#survey" className="inline-flex items-center mt-4 text-primary-600 font-medium hover:text-primary-800 transition-colors">
-                Get Industry-Specific Solutions
+                Calculate Your Savings
                 <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                 </svg>
@@ -161,10 +161,10 @@ const Industries: React.FC = () => {
           className="mt-16 text-center"
         >
           <p className="text-neutral-600 mb-6 max-w-3xl mx-auto">
-            Don't see your industry listed? We serve many more sectors and can provide customized solutions for your specific needs.
+            <strong className="text-primary-700">Price Calculator:</strong> Get an instant quote tailored to your industry and specific needs. Our transparent pricing means no hidden fees or surprises.
           </p>
           <a href="#survey" className="btn-primary inline-flex items-center">
-            Discuss Your Industry Needs
+            Get Your Custom Price Quote
             <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
