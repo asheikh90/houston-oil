@@ -27,8 +27,8 @@ const Header = () => {
       <div className="container-custom">
         {/* Top bar with contact info */}
         <div className="hidden md:flex justify-end items-center py-2 text-sm text-neutral-600 border-b border-neutral-100">
-          <a href="tel:+17135551234" className="flex items-center mr-6 hover:text-primary-600 transition-colors">
-            <FaPhone className="mr-2" /> (713) 555-1234
+          <a href="tel:+12672121034" className="flex items-center mr-6 hover:text-primary-600 transition-colors">
+            <FaPhone className="mr-2" /> (267) 212-1034
           </a>
           <a href="mailto:info@houstonoilsupply.com" className="flex items-center hover:text-primary-600 transition-colors">
             <FaEnvelope className="mr-2" /> info@houstonoilsupply.com
@@ -215,8 +215,8 @@ const Header = () => {
                 <li className="px-4 pt-2 pb-1"><a href="#survey" className="btn-primary w-full text-center py-3">Get Quote</a></li>
               </ul>
               <div className="mt-4 flex flex-col space-y-3 px-4 py-2 border-t border-neutral-100">
-                <a href="tel:+17135551234" className="flex items-center text-sm text-neutral-600 hover:text-primary-600 transition-colors">
-                  <FaPhone className="mr-2" /> (713) 555-1234
+                <a href="tel:+12672121034" className="flex items-center text-sm text-neutral-600 hover:text-primary-600 transition-colors">
+                  <FaPhone className="mr-2" /> (267) 212-1034
                 </a>
                 <a href="mailto:info@houstonoilsupply.com" className="flex items-center text-sm text-neutral-600 hover:text-primary-600 transition-colors">
                   <FaEnvelope className="mr-2" /> info@houstonoilsupply.com

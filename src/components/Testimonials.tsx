@@ -1,147 +1,180 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-
-const testimonials = [
-  {
-    quote: "Houston Lubricants has been our trusted supplier for over 5 years. Their quality products and reliable delivery have kept our fleet running smoothly without interruption.",
-    author: "Michael Rodriguez",
-    position: "Fleet Manager",
-    company: "Gulf Coast Logistics",
-    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  },
-  {
-    quote: "We switched to Houston Lubricants after experiencing quality issues with our previous supplier. The difference was immediate - better performance, fewer maintenance issues, and excellent technical support.",
-    author: "Sarah Johnson",
-    position: "Operations Director",
-    company: "Texas Manufacturing Solutions",
-    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  },
-  {
-    quote: "As a construction company with equipment operating in challenging conditions, we need lubricants we can rely on. Houston Lubricants delivers premium products that extend our equipment life and reduce downtime.",
-    author: "David Martinez",
-    position: "Procurement Manager",
-    company: "Bayou Builders Inc.",
-    image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  }
-];
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaQuoteLeft, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Testimonials = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const testimonials = [
+    {
+      id: 1,
+      name: "Michael Rodriguez",
+      position: "Fleet Manager",
+      company: "Houston Logistics Co.",
+      image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      quote: "Houston Oil Supply has been our trusted partner for over 5 years. Their premium lubricants and on-time delivery have significantly reduced our fleet maintenance costs and downtime.",
+      rating: 5
+    },
+    {
+      id: 2,
+      name: "Sarah Johnson",
+      position: "Operations Director",
+      company: "Gulf Manufacturing Inc.",
+      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      quote: "The technical expertise of the Houston Oil Supply team is unmatched. They helped us identify the perfect lubricant solution for our specialized equipment, improving efficiency by 23%.",
+      rating: 5
+    },
+    {
+      id: 3,
+      name: "David Chen",
+      position: "Maintenance Supervisor",
+      company: "Texas Energy Systems",
+      image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      quote: "When we had an emergency situation at our plant, Houston Oil Supply delivered the lubricants we needed within hours. Their 24-hour service is a game-changer for our operations.",
+      rating: 5
+    }
+  ];
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
   
   const nextTestimonial = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   };
   
   const prevTestimonial = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
   };
 
   return (
-    <section className="py-16 bg-neutral-50">
+    <section className="py-20 bg-gradient-to-b from-white to-primary-50">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-4 font-heading">What Our Clients Say</h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Trusted by leading businesses across Houston and the Gulf Coast region.
-          </p>
+        <div className="text-center mb-16">
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="inline-block px-4 py-1 rounded-full bg-primary-100 text-primary-800 text-sm font-medium mb-4"
+          >
+            Client Testimonials
+          </motion.span>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-primary-800 mb-4 font-heading"
+          >
+            What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">Clients Say</span>
+          </motion.h2>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-lg text-neutral-600 max-w-2xl mx-auto"
+          >
+            Don't just take our word for it. Hear from the businesses that trust Houston Oil Supply for their lubrication needs.
+          </motion.p>
         </div>
         
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            <div className="overflow-hidden">
+        <div className="relative max-w-4xl mx-auto">
+          {/* Testimonial carousel */}
+          <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg">
+            <AnimatePresence mode="wait">
               <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                key={currentIndex}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
-                className="card"
+                className="p-8 md:p-12"
               >
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0">
-                    <img 
-                      src={testimonials[activeIndex].image} 
-                      alt={testimonials[activeIndex].author} 
-                      className="w-full h-full object-cover"
-                    />
+                <div className="flex flex-col md:flex-row items-center">
+                  <div className="mb-6 md:mb-0 md:mr-8">
+                    <div className="relative">
+                      <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-primary-100">
+                        <img 
+                          src={testimonials[currentIndex].image} 
+                          alt={testimonials[currentIndex].name} 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="absolute -bottom-2 -right-2 bg-primary-600 text-white rounded-full p-2">
+                        <FaQuoteLeft />
+                      </div>
+                    </div>
                   </div>
                   
-                  <div>
-                    <div className="mb-4">
-                      <svg className="w-10 h-10 text-primary-300" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                        <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-                      </svg>
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="flex justify-center md:justify-start mb-3">
+                      {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                        <FaStar key={i} className="text-yellow-400 mr-1" />
+                      ))}
                     </div>
                     
-                    <p className="text-lg text-neutral-700 italic mb-6">
-                      {testimonials[activeIndex].quote}
-                    </p>
+                    <blockquote className="text-lg md:text-xl text-neutral-700 italic mb-6">
+                      "{testimonials[currentIndex].quote}"
+                    </blockquote>
                     
                     <div>
-                      <p className="font-bold text-primary-700">{testimonials[activeIndex].author}</p>
-                      <p className="text-neutral-500">{testimonials[activeIndex].position}, {testimonials[activeIndex].company}</p>
+                      <h4 className="text-xl font-bold text-primary-800">{testimonials[currentIndex].name}</h4>
+                      <p className="text-neutral-600">
+                        {testimonials[currentIndex].position}, {testimonials[currentIndex].company}
+                      </p>
                     </div>
                   </div>
                 </div>
               </motion.div>
-            </div>
+            </AnimatePresence>
             
-            <div className="flex justify-center mt-8 gap-2">
+            {/* Navigation dots */}
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === activeIndex ? 'bg-primary-600 w-6' : 'bg-neutral-300'
+                    index === currentIndex ? 'bg-primary-600 w-6' : 'bg-primary-200'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
             </div>
-            
-            <div className="absolute top-1/2 -translate-y-1/2 left-0 -ml-4 md:-ml-6">
-              <button
-                onClick={prevTestimonial}
-                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-primary-700 hover:bg-primary-50 transition-colors"
-                aria-label="Previous testimonial"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-            </div>
-            
-            <div className="absolute top-1/2 -translate-y-1/2 right-0 -mr-4 md:-mr-6">
-              <button
-                onClick={nextTestimonial}
-                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-primary-700 hover:bg-primary-50 transition-colors"
-                aria-label="Next testimonial"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
           </div>
+          
+          {/* Navigation buttons */}
+          <button
+            onClick={prevTestimonial}
+            className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 bg-white rounded-full p-3 shadow-lg text-primary-700 hover:text-primary-600 hover:shadow-xl transition-all duration-300 focus:outline-none"
+            aria-label="Previous testimonial"
+          >
+            <FaChevronLeft />
+          </button>
+          
+          <button
+            onClick={nextTestimonial}
+            className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 bg-white rounded-full p-3 shadow-lg text-primary-700 hover:text-primary-600 hover:shadow-xl transition-all duration-300 focus:outline-none"
+            aria-label="Next testimonial"
+          >
+            <FaChevronRight />
+          </button>
         </div>
         
-        <div className="mt-16 flex flex-wrap justify-center gap-8 md:gap-16">
-          <div className="text-center opacity-70 hover:opacity-100 transition-opacity">
-            <img src="https://via.placeholder.com/150x60?text=Client+Logo" alt="Client logo" className="h-12 w-auto mx-auto grayscale hover:grayscale-0 transition-all" />
-          </div>
-          <div className="text-center opacity-70 hover:opacity-100 transition-opacity">
-            <img src="https://via.placeholder.com/150x60?text=Client+Logo" alt="Client logo" className="h-12 w-auto mx-auto grayscale hover:grayscale-0 transition-all" />
-          </div>
-          <div className="text-center opacity-70 hover:opacity-100 transition-opacity">
-            <img src="https://via.placeholder.com/150x60?text=Client+Logo" alt="Client logo" className="h-12 w-auto mx-auto grayscale hover:grayscale-0 transition-all" />
-          </div>
-          <div className="text-center opacity-70 hover:opacity-100 transition-opacity">
-            <img src="https://via.placeholder.com/150x60?text=Client+Logo" alt="Client logo" className="h-12 w-auto mx-auto grayscale hover:grayscale-0 transition-all" />
-          </div>
-          <div className="text-center opacity-70 hover:opacity-100 transition-opacity">
-            <img src="https://via.placeholder.com/150x60?text=Client+Logo" alt="Client logo" className="h-12 w-auto mx-auto grayscale hover:grayscale-0 transition-all" />
-          </div>
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <a href="#survey" className="btn-primary inline-flex items-center">
+            Join Our Satisfied Customers
+            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </motion.div>
       </div>
     </section>
   );

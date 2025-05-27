@@ -197,8 +197,8 @@ const Footer = () => {
                 <FaPhone className="text-primary-400 mt-1 mr-3" />
                 <div>
                   <p className="text-white font-medium">Phone</p>
-                  <a href="tel:+17135551234" className="text-primary-200 hover:text-white transition-colors">
-                    (713) 555-1234
+                  <a href="tel:+12672121034" className="text-primary-200 hover:text-white transition-colors">
+                    (267) 212-1034
                   </a>
                 </div>
               </motion.li>
