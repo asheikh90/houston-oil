@@ -4,6 +4,13 @@ import { motion } from 'framer-motion';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
+  const scrollToSurvey = () => {
+    const surveyElement = document.getElementById('survey');
+    if (surveyElement) {
+      surveyElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <footer className="bg-primary-900 text-white pt-16 pb-8">
       <div className="container-custom">
@@ -197,7 +204,7 @@ const Footer = () => {
                 <FaPhone className="text-primary-400 mt-1 mr-3" />
                 <div>
                   <p className="text-white font-medium">Phone</p>
-                  <a href="tel:+12672121034" className="text-primary-200 hover:text-white transition-colors">
+                  <a href="tel:+12672121034" className="text-primary-200 hover:text-white transition-colors btn-text-cta">
                     (267) 212-1034
                   </a>
                 </div>
@@ -213,7 +220,7 @@ const Footer = () => {
                 <FaEnvelope className="text-primary-400 mt-1 mr-3" />
                 <div>
                   <p className="text-white font-medium">Email</p>
-                  <a href="mailto:info@houstonoilsupply.com" className="text-primary-200 hover:text-white transition-colors">
+                  <a href="mailto:info@houstonoilsupply.com" className="text-primary-200 hover:text-white transition-colors btn-text-cta">
                     info@houstonoilsupply.com
                   </a>
                 </div>
@@ -226,9 +233,12 @@ const Footer = () => {
                 viewport={{ once: true }}
                 className="pt-4"
               >
-                <a href="#survey" className="btn-primary bg-accent-600 hover:bg-accent-700 w-full text-center">
+                <button 
+                  onClick={scrollToSurvey}
+                  className="btn-primary bg-accent-600 hover:bg-accent-700 w-full text-center pulse-animation"
+                >
                   Get a Quote
-                </a>
+                </button>
               </motion.li>
             </ul>
           </div>
@@ -240,15 +250,12 @@ const Footer = () => {
               &copy; {currentYear} Houston Oil Supply. All rights reserved.
             </p>
             
-            <div className="flex space-x-6">
-              <a href="#" className="text-primary-300 hover:text-white text-sm transition-colors">
-                Privacy Policy
+            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+              <a href="tel:+12672121034" className="text-primary-300 hover:text-white text-sm transition-colors flex items-center justify-center md:justify-start">
+                <FaPhone className="mr-2" /> (267) 212-1034
               </a>
-              <a href="#" className="text-primary-300 hover:text-white text-sm transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="text-primary-300 hover:text-white text-sm transition-colors">
-                Sitemap
+              <a href="mailto:info@houstonoilsupply.com" className="text-primary-300 hover:text-white text-sm transition-colors flex items-center justify-center md:justify-start">
+                <FaEnvelope className="mr-2" /> info@houstonoilsupply.com
               </a>
             </div>
           </div>

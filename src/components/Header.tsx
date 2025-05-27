@@ -20,6 +20,14 @@ const Header = () => {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
 
+  const scrollToSurvey = () => {
+    const surveyElement = document.getElementById('survey');
+    if (surveyElement) {
+      surveyElement.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-white shadow-sm'
@@ -130,7 +138,14 @@ const Header = () => {
               </li>
               <li><a href="#about" className="font-medium text-neutral-700 hover:text-primary-600 transition-colors py-2">About Us</a></li>
               <li><a href="#contact" className="font-medium text-neutral-700 hover:text-primary-600 transition-colors py-2">Contact</a></li>
-              <li><a href="#survey" className="btn-primary py-2 px-4 ml-4">Get Quote</a></li>
+              <li>
+                <button 
+                  onClick={scrollToSurvey}
+                  className="btn-primary py-2 px-4 ml-4 pulse-animation"
+                >
+                  Get Quote
+                </button>
+              </li>
             </ul>
           </nav>
           
@@ -212,7 +227,14 @@ const Header = () => {
                 </li>
                 <li><a href="#about" className="block px-4 py-3 font-medium text-neutral-700 hover:bg-primary-50 hover:text-primary-700 rounded-md">About Us</a></li>
                 <li><a href="#contact" className="block px-4 py-3 font-medium text-neutral-700 hover:bg-primary-50 hover:text-primary-700 rounded-md">Contact</a></li>
-                <li className="px-4 pt-2 pb-1"><a href="#survey" className="btn-primary w-full text-center py-3">Get Quote</a></li>
+                <li className="px-4 pt-2 pb-1">
+                  <button 
+                    onClick={scrollToSurvey}
+                    className="btn-primary w-full text-center py-3 pulse-animation"
+                  >
+                    Get Quote
+                  </button>
+                </li>
               </ul>
               <div className="mt-4 flex flex-col space-y-3 px-4 py-2 border-t border-neutral-100">
                 <a href="tel:+12672121034" className="flex items-center text-sm text-neutral-600 hover:text-primary-600 transition-colors">
