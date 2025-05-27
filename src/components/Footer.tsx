@@ -1,263 +1,99 @@
-import { FaPhone, FaEnvelope, FaFacebook, FaTwitter, FaLinkedin, FaYoutube, FaChevronRight } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import React from 'react';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  
-  const scrollToSurvey = () => {
-    const surveyElement = document.getElementById('survey');
-    if (surveyElement) {
-      surveyElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-  
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-primary-900 text-white pt-16 pb-8">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <footer className="bg-primary-900 text-white">
+      <div className="container-custom py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
           <div>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="mb-6"
-            >
-              <h3 className="text-2xl font-bold mb-1 font-heading">
-                <span className="text-white">HOUSTON</span> <span className="text-primary-300">OIL SUPPLY</span>
-              </h3>
-              <div className="w-16 h-1 bg-accent-500 rounded-full"></div>
-            </motion.div>
-            
-            <p className="text-primary-100 mb-6">
-              Premium bulk lubricants for Houston's industry leaders. Quality products, competitive pricing, and reliable service.
+            <div className="text-2xl font-bold text-white font-heading relative inline-block mb-6">
+              <span className="text-white">HOUSTON</span> <span className="text-primary-300">OIL SUPPLY</span>
+              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary-400 to-accent-400"></div>
+            </div>
+            <p className="text-primary-200 mb-6">
+              Premium quality bulk oil and lubricants for industrial and commercial applications throughout Houston and beyond.
             </p>
-            
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-800 hover:bg-primary-700 flex items-center justify-center transition-colors">
-                <FaFacebook />
+              <a href="#" className="text-primary-300 hover:text-white transition-colors">
+                <FaFacebook size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-800 hover:bg-primary-700 flex items-center justify-center transition-colors">
-                <FaTwitter />
+              <a href="#" className="text-primary-300 hover:text-white transition-colors">
+                <FaTwitter size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-800 hover:bg-primary-700 flex items-center justify-center transition-colors">
-                <FaLinkedin />
+              <a href="#" className="text-primary-300 hover:text-white transition-colors">
+                <FaLinkedin size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-800 hover:bg-primary-700 flex items-center justify-center transition-colors">
-                <FaYoutube />
+              <a href="#" className="text-primary-300 hover:text-white transition-colors">
+                <FaYoutube size={20} />
               </a>
             </div>
           </div>
           
+          {/* Quick Links */}
           <div>
-            <motion.h4 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-lg font-bold mb-6 relative inline-block"
-            >
-              Products
-              <div className="absolute -bottom-1 left-0 w-12 h-0.5 bg-accent-500"></div>
-            </motion.h4>
-            
+            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <motion.li 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <a href="#" className="text-primary-200 hover:text-white transition-colors flex items-center">
-                  <FaChevronRight className="mr-2 text-xs text-primary-400" /> Motor Oils
-                </a>
-              </motion.li>
-              <motion.li 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <a href="#" className="text-primary-200 hover:text-white transition-colors flex items-center">
-                  <FaChevronRight className="mr-2 text-xs text-primary-400" /> Hydraulic Fluids
-                </a>
-              </motion.li>
-              <motion.li 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <a href="#" className="text-primary-200 hover:text-white transition-colors flex items-center">
-                  <FaChevronRight className="mr-2 text-xs text-primary-400" /> Industrial Greases
-                </a>
-              </motion.li>
-              <motion.li 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <a href="#" className="text-primary-200 hover:text-white transition-colors flex items-center">
-                  <FaChevronRight className="mr-2 text-xs text-primary-400" /> Transmission Fluids
-                </a>
-              </motion.li>
-              <motion.li 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <a href="#" className="text-primary-200 hover:text-white transition-colors flex items-center">
-                  <FaChevronRight className="mr-2 text-xs text-primary-400" /> Coolants & Antifreeze
-                </a>
-              </motion.li>
+              <li><a href="#products" className="text-primary-200 hover:text-white transition-colors">Products</a></li>
+              <li><a href="#industries" className="text-primary-200 hover:text-white transition-colors">Industries</a></li>
+              <li><a href="#about" className="text-primary-200 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#faq" className="text-primary-200 hover:text-white transition-colors">FAQs</a></li>
+              <li><a href="#survey" className="text-primary-200 hover:text-white transition-colors">Contact Us</a></li>
             </ul>
           </div>
           
+          {/* Products */}
           <div>
-            <motion.h4 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-lg font-bold mb-6 relative inline-block"
-            >
-              Industries
-              <div className="absolute -bottom-1 left-0 w-12 h-0.5 bg-accent-500"></div>
-            </motion.h4>
-            
+            <h3 className="text-lg font-semibold mb-6">Our Products</h3>
             <ul className="space-y-3">
-              <motion.li 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <a href="#" className="text-primary-200 hover:text-white transition-colors flex items-center">
-                  <FaChevronRight className="mr-2 text-xs text-primary-400" /> Manufacturing
-                </a>
-              </motion.li>
-              <motion.li 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <a href="#" className="text-primary-200 hover:text-white transition-colors flex items-center">
-                  <FaChevronRight className="mr-2 text-xs text-primary-400" /> Transportation & Logistics
-                </a>
-              </motion.li>
-              <motion.li 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <a href="#" className="text-primary-200 hover:text-white transition-colors flex items-center">
-                  <FaChevronRight className="mr-2 text-xs text-primary-400" /> Energy & Utilities
-                </a>
-              </motion.li>
-              <motion.li 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <a href="#" className="text-primary-200 hover:text-white transition-colors flex items-center">
-                  <FaChevronRight className="mr-2 text-xs text-primary-400" /> Construction
-                </a>
-              </motion.li>
-              <motion.li 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <a href="#" className="text-primary-200 hover:text-white transition-colors flex items-center">
-                  <FaChevronRight className="mr-2 text-xs text-primary-400" /> Marine
-                </a>
-              </motion.li>
+              <li><a href="#engine-oils" className="text-primary-200 hover:text-white transition-colors">Engine Oils</a></li>
+              <li><a href="#hydraulic-fluids" className="text-primary-200 hover:text-white transition-colors">Hydraulic Fluids</a></li>
+              <li><a href="#transmission-fluids" className="text-primary-200 hover:text-white transition-colors">Transmission Fluids</a></li>
+              <li><a href="#greases" className="text-primary-200 hover:text-white transition-colors">Industrial Greases</a></li>
+              <li><a href="#marine-lubricants" className="text-primary-200 hover:text-white transition-colors">Marine Lubricants</a></li>
+              <li><a href="#eco-friendly" className="text-primary-200 hover:text-white transition-colors">Eco-Friendly Options</a></li>
             </ul>
           </div>
           
+          {/* Contact Info */}
           <div>
-            <motion.h4 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="text-lg font-bold mb-6 relative inline-block"
-            >
-              Contact Us
-              <div className="absolute -bottom-1 left-0 w-12 h-0.5 bg-accent-500"></div>
-            </motion.h4>
-            
+            <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
-              <motion.li 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="flex items-start"
-              >
-                <FaPhone className="text-primary-400 mt-1 mr-3" />
-                <div>
-                  <p className="text-white font-medium">Phone</p>
-                  <a href="tel:+12672121034" className="text-primary-200 hover:text-white transition-colors btn-text-cta">
-                    (267) 212-1034
-                  </a>
-                </div>
-              </motion.li>
-              
-              <motion.li 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="flex items-start"
-              >
-                <FaEnvelope className="text-primary-400 mt-1 mr-3" />
-                <div>
-                  <p className="text-white font-medium">Email</p>
-                  <a href="mailto:info@houstonoilsupply.com" className="text-primary-200 hover:text-white transition-colors btn-text-cta">
-                    info@houstonoilsupply.com
-                  </a>
-                </div>
-              </motion.li>
-              
-              <motion.li 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="pt-4"
-              >
-                <button 
-                  onClick={scrollToSurvey}
-                  className="btn-primary bg-accent-600 hover:bg-accent-700 w-full text-center pulse-animation"
-                >
-                  Get a Quote
-                </button>
-              </motion.li>
+              <li className="flex items-start">
+                <FaMapMarkerAlt className="text-primary-300 mt-1 mr-3" />
+                <span className="text-primary-200">
+                  1234 Petroleum Drive<br />
+                  Houston, TX 77002
+                </span>
+              </li>
+              <li className="flex items-center">
+                <FaPhone className="text-primary-300 mr-3" />
+                <a href="tel:+12672121034" className="text-primary-200 hover:text-white transition-colors">
+                  (267) 212-1034
+                </a>
+              </li>
+              <li className="flex items-center">
+                <FaEnvelope className="text-primary-300 mr-3" />
+                <a href="mailto:info@houstonoilsupply.com" className="text-primary-200 hover:text-white transition-colors">
+                  info@houstonoilsupply.com
+                </a>
+              </li>
             </ul>
+            <div className="mt-6">
+              <a href="#survey" className="btn-secondary bg-primary-800 hover:bg-primary-700 text-white border-primary-700">
+                Request a Quote
+              </a>
+            </div>
           </div>
         </div>
         
-        <div className="border-t border-primary-800 pt-8 mt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-primary-300 text-sm mb-4 md:mb-0">
-              &copy; {currentYear} Houston Oil Supply. All rights reserved.
-            </p>
-            
-            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
-              <a href="tel:+12672121034" className="text-primary-300 hover:text-white text-sm transition-colors flex items-center justify-center md:justify-start">
-                <FaPhone className="mr-2" /> (267) 212-1034
-              </a>
-              <a href="mailto:info@houstonoilsupply.com" className="text-primary-300 hover:text-white text-sm transition-colors flex items-center justify-center md:justify-start">
-                <FaEnvelope className="mr-2" /> info@houstonoilsupply.com
-              </a>
-            </div>
+        <div className="mt-12 pt-8 border-t border-primary-800 text-center text-primary-300 text-sm">
+          <p>© {new Date().getFullYear()} Houston Oil Supply. All rights reserved.</p>
+          <div className="mt-2 flex justify-center space-x-6">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Sitemap</a>
           </div>
         </div>
       </div>
